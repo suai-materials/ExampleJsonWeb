@@ -1,0 +1,40 @@
+Задание 2. Десериализация
+
+Используя различные ресурсы в сети, десериализовать данные, полученные в формате json. Самостоятельно найти бесплатный ресурс, который может предоставить различные данные в формате json(сведения о погоде, странах, фильмах, валютах и т.д.).
+
+Вспомогательные классы
+
+Класс WebRequest представляет запрос информации для отправки по определенному URI. Идентификатор URI передается в качестве параметра методу Create().
+
+Класс WebResponse представляет данные, извлекаемые из сервера. Вызов метода WebRequest.GetResponse() приводит к отправке запроса веб-серверу и к созданию объекта WebResponse для просмотра возвращенных данных.
+
+Был использован [[https://cataas.com/]], который выдаёт случайную фотографию кота.
+
+1. Получил Json на [[https://cataas.com/cat?json=true]]
+   #+begin_src json
+{"tags":["caracal","kitten","floppa","ears","gif"],"createdAt":"2022-05-01T20:51:36.618Z","updatedAt":"2022-10-11T07:52:32.699Z","validated":true,"owner":"null","file":"626ef2d97f254a0017b564ef.gif","mimetype":"image/gif","size":2352578,"_id":"SbbeZwoC81vSTzBX","url":"/cat/SbbeZwoC81vSTzBX"}
+   #+end_src
+2. На основе его Rider создал класс:
+
+   #+INCLUDE: ./WebJsonExample/Cat.cs src csharp
+3. Создал WPF-приложение представленное ниже
+
+Код:
+
+- MainWindows.xaml
+
+  #+INCLUDE: ./WebJsonExample/MainWindow.xaml src xml
+
+- MainWindow.xaml.cs
+
+  #+INCLUDE: ./WebJsonExample/MainWindow.xaml.cs src csharp
+
+Демонстрация работы приложения:
+
+[[file:images/1.jpg]]
+
+[[file:images/2.jpg]]
+
+[[file:images/3.jpg]]
+
+[[file:images/4.jpg]]
